@@ -1,4 +1,49 @@
-https://cosplaytele.com/wp-content/uploads/2024/01/293172358_1027749337945791_5526464405172981062_n.png
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Gallery Link Paste</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: #eee;
+    }
+    h1 {
+      text-align: center;
+      padding: 15px;
+      margin: 0;
+      background: #222;
+    }
+    .grid {
+      display: grid;
+      gap: 10px;
+      padding: 10px;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+    .grid img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      background: #333;
+      display: block;
+      transition: transform .3s;
+    }
+    .grid img:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <h1>Gallery Demo</h1>
+  <div class="grid" id="gallery"></div>
+
+<script>
+  // 🔽 Dán link ảnh của bạn vào đây
+  const links = [
+    "https://cosplaytele.com/wp-content/uploads/2024/01/293172358_1027749337945791_5526464405172981062_n.png
 https://cosplaytele.com/wp-content/uploads/2024/01/293172358_1027749337945791_5526464405172981062_n.png
 https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-1_result.webp
 https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-2_result.webp
@@ -97,3 +142,15 @@ https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wu
 https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-95_result.webp
 https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-96_result.webp
 https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-97_result.webp
+  ];
+
+  const gallery = document.getElementById("gallery");
+  links.forEach(url => {
+    const img = document.createElement("img");
+    img.src = url;
+    img.loading = "lazy";
+    gallery.appendChild(img);
+  });
+</script>
+</body>
+</html>
