@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Gallery Link Paste</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: #eee;
+    }
+    h1 {
+      text-align: center;
+      padding: 15px;
+      margin: 0;
+      background: #222;
+    }
+    .grid {
+      display: grid;
+      gap: 10px;
+      padding: 10px;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+    .grid img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      background: #333;
+      display: block;
+      transition: transform .3s;
+    }
+    .grid img:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <h1>Gallery Demo</h1>
+  <div class="grid" id="gallery"></div>
+
+<script>
+  // 🔽 Dán link ảnh của bạn vào đây
+  const links = [
+    "https://cosplaytele.com/wp-content/uploads/2024/01/293172358_1027749337945791_5526464405172981062_n.png
+https://cosplaytele.com/wp-content/uploads/2024/01/293172358_1027749337945791_5526464405172981062_n.png
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-1_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-2_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-3_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-4_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-5_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-6_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-7_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-8_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-9_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-10_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-11_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-12_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-13_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-14_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-15_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-16_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-17_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-18_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-19_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-20_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-21_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-22_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-23_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-24_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-25_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-26_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-27_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-28_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-29_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-30_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-31_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-32_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-33_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-34_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-35_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-36_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-37_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-38_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-39_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-40_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-41_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-42_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-43_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-44_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-45_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-46_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-47_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-48_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-49_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-50_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-51_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-52_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-53_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-54_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-55_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-56_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-57_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-58_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-59_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-60_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-61_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-62_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-63_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-64_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-65_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-66_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-67_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-68_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-69_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-70_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-71_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-72_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-73_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-74_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-75_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-76_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-77_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-78_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-79_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-80_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-81_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-82_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-83_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-84_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-85_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-86_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-87_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-88_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-89_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-90_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-91_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-92_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-93_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-94_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-95_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-96_result.webp
+https://cosplaytele.com/wp-content/uploads/2025/08/Umeko-J-cosplay-Fleurdelys-Wuthering-Waves-97_result.webp
+  ];
+
+  const gallery = document.getElementById("gallery");
+  links.forEach(url => {
+    const img = document.createElement("img");
+    img.src = url;
+    img.loading = "lazy";
+    gallery.appendChild(img);
+  });
+</script>
+</body>
+</html>
